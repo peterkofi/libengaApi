@@ -1,0 +1,160 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Libenga API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/agent": {
+            "get": {
+                "tags": [
+                    "agent"
+                ],
+                "summary": "Affiche Tous agents se trouvant dans la base de données",
+                "operationId": "bfd6222776d243e13b7411f8fba6d394",
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "agent"
+                ],
+                "summary": "Enregistrer un nouveau agent",
+                "operationId": "264177e636cca567fe2827881c3d1bc2",
+                "responses": {
+                    "200": {
+                        "description": "Enregistrement avec success"
+                    },
+                    "400": {
+                        "description": "erreur lors de l'enregistremnt"
+                    }
+                }
+            }
+        },
+        "/client": {
+            "get": {
+                "tags": [
+                    "client"
+                ],
+                "summary": "Affiche Tous Client se trouvant dans la base de données",
+                "operationId": "5781c1d61750090ca79e785c2cce6999",
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "client"
+                ],
+                "summary": "Enregistrer un nouveau client",
+                "operationId": "e8a58c07bfc028129fe11403bdc975a9",
+                "responses": {
+                    "200": {
+                        "description": "Enregistrement avec success"
+                    },
+                    "400": {
+                        "description": "erreur lors de l'enregistremnt"
+                    }
+                }
+            }
+        },
+        "/client/{idClient}": {
+            "get": {
+                "tags": [
+                    "client"
+                ],
+                "summary": " Affiche tous les clients ayant l'Id recherché",
+                "operationId": "ab6a0ab3f6b9f47b90d2d0b35789b395",
+                "parameters": [
+                    {
+                        "name": "idClient",
+                        "in": "path",
+                        "description": "idClient designe l'Id recherché",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "visualisation du client recherché"
+                    },
+                    "400": {
+                        "description": "Id Invalide"
+                    },
+                    "404": {
+                        "description": "le client n'existe pas"
+                    }
+                }
+            }
+        },
+        "/compte": {
+            "get": {
+                "tags": [
+                    "compte"
+                ],
+                "summary": "Affiche Tous les comptes des client se trouvant dans la base de données",
+                "operationId": "4b76e774a55772128a4304c5cfd79602",
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "compte"
+                ],
+                "summary": "Enregistrer un nouveau compte",
+                "operationId": "f19c3b85a4afc5c972d50a9ba6cdfcb6",
+                "responses": {
+                    "200": {
+                        "description": "Enregistrement avec success"
+                    },
+                    "400": {
+                        "description": "erreur lors de l'enregistremnt"
+                    }
+                }
+            }
+        },
+        "/compte/{idCompte}": {
+            "get": {
+                "tags": [
+                    "compte"
+                ],
+                "summary": " Affiche tous les comptes ayant l'Id recherché",
+                "operationId": "440a8c04f0d7f7d10558ab3c9943c51b",
+                "parameters": [
+                    {
+                        "name": "idCompte",
+                        "in": "path",
+                        "description": "idCompte designe l'Id recherché",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": "1"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "visualisation du compte recherché"
+                    },
+                    "400": {
+                        "description": "Id Invalide"
+                    },
+                    "404": {
+                        "description": "le client n'existe pas"
+                    }
+                }
+            }
+        }
+    }
+}
